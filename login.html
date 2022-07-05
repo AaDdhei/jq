@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+  <meta name="keywords" content="HTML模板">
+  <meta name="description" content="基于Bootstrap v4.4.1的后台管理系统的HTML模板。">
+  <meta name="author" content="yinq">
+  <title>登录页面后台管理系统模板</title>
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-touch-fullscreen" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/index.css">
+  
+
+</head>
+
+<body>
+  <!--页面loading end-->
+  <div class="container-fluid">
+    <div class="row">
+    <div class="col-lg-8 " style="padding-left: 0px;"><img src="images\login-bg-1.jpg" class="w-100" style="height:880px"></div>
+    <div class="col-lg-4">
+  <div class="text-center" style="margin-top: 250px; ">
+    <form>
+      
+      <h2 class="text-primary">后台管理系统</h2>
+      <p>请使用您的账号登录系统</p>
+      <div class="form-group row">
+        <label for="inputEmail3" class="col-sm-2 col-form-label">用户名:</label>
+        <div class="col-sm-10">
+          <input type="username" class="form-control" id="username" placeholder="请输入您的用户名">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="inputPassword3" class="col-sm-2 col-form-label">密码:</label>
+        <div class="col-sm-10">
+          <input type="password" class="form-control" id="password" placeholder="请输入您的密码">
+        </div>
+      </div>
+      
+      <div class="form-group row "style="margin-left:120px ;">
+        <div class="col-sm-10 ">
+          <button type="submit" class="btn btn-primary btn-lg btn-block">立即登录</button>
+          <p>copyright@ 2020.All right reserved</p>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+</div>
+  </div>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel" style="color: red;">警告</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        您输入的用户名或密码错误，请重新输入！
+      </div>
+     
+    </div>
+  </div>
+</div>
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script type="text/javascript">
+      /*
+        弹出模态框（警告框）步骤：
+        1.从bootstrap官方文档中复制代码黏贴到body
+        2.在ajax中，主动（需要根据后台返回的code值进行判断，不是200）触发弹出模态框
+          $('#exampleModal').modal('show')
+        3. 对模态框进行定制化改造（根据效果图来改造的）
+      */
+
+      $("form").submit(function(){
+        var data = {
+            username: $("#username").val(),
+            password: $("#password").val()
+        }
+        //通关ajax提交
+        $.ajax({
+            type:"post",
+            url:"http://47.108.131.92:8084/auth/loginByWeb",
+            //表单序列化
+            data:JSON.stringify(data),
+            contentType:"application/json",
+            dataType:'json',
+            success:function(info){
+                console.log(info);
+                if (info.code == "200"){
+                    //跳转到首页
+                    location.href = 'index.html';
+                }else{
+                    $('#exampleModal').modal('show')
+                }
+            },
+            error:function(){
+                console.log("请求失败!");
+            }
+        });
+        event.preventDefault();
+    });
+
+
+    
+
+  </script>
+</body>
+
+</html>

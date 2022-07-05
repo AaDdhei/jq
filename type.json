@@ -1,0 +1,37 @@
+{
+    "code": 200,
+    "data": [
+        {
+            "id": 1,
+            "title": "今日收入",
+            "number": 102125,
+            "createTime": null,
+            "updateTime": null,
+            "validFlag": 1
+        },
+        {
+            "id": 2,
+            "title": "用户总数",
+            "number": 920000,
+            "createTime": null,
+            "updateTime": null,
+            "validFlag": 1
+        },
+        {
+            "id": 3,
+            "title": "下载总量",
+            "number": 34005000,
+            "createTime": null,
+            "updateTime": null,
+            "validFlag": 1
+        },
+        {
+            "id": 4,
+            "title": "新增留言",
+            "number": 153,
+            "createTime": null,
+            "updateTime": null,
+            "validFlag": 1
+        }
+    ]
+}

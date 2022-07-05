@@ -1,0 +1,124 @@
+body {
+    font-family: "Microsoft YaHei", sans-serif;
+    color: #4d5259;
+    line-height: 1.72;
+    font-size: 14px;
+    overflow-x: hidden;
+    background-color: #F4F5FA;
+}
+
+.lyear-layout-sidebar {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    z-index: 5;
+    display: block;
+    width: 240px;
+    font-weight: 500;
+    /* -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transition: 0.3s transform;
+    transition: 0.3s transform;
+    transform: translateX(0);
+    -webkit-box-shadow: 0px 0px 5px rgb(0 0 0 / 8%);
+    -moz-box-shadow: 0px 0px 5px rgba(0,0,0,0.08); */
+    box-shadow: 0px 0px 5px rgb(0 0 0 / 8%);
+}
+
+.sidebar-header {
+    position: relative;
+    overflow: hidden;
+    z-index: 999;
+    background-color: #fff;
+    width: 100%;
+    box-shadow: 0 1px 1px -1px rgb(77 82 89 / 15%);
+}
+
+.sidebar-header a img {
+    max-width: 240px;
+    margin: 16px 0px;
+}
+.sidebar-header a {
+    display: block;
+    height: auto;
+    width: 100%;
+    text-align: center;
+}
+
+.lyear-layout-sidebar-info {
+    height: -moz-calc(100% - 68px);
+    height: -webkit-calc(100% - 68px);
+    height: calc(100% - 68px);
+    position: relative;
+    background-color: #fff;
+}
+
+.ps {
+    overflow: hidden !important; 
+}
+
+.nav-drawer {
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+.nav-drawer > li {
+    position: relative;
+    display: block;
+}
+
+.nav-drawer > li.active > a {
+    background-color: rgba(0,0,0,.0125)!important;
+}
+.nav-drawer > .active > a {
+    background-color: rgba(0,0,0,.0125);
+    border-color: #33cabb;
+}
+.nav-drawer > li > a {
+    border-right: 3px solid transparent;
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+.nav-drawer li a {
+    position: relative;
+    display: block;
+    padding-right: 24px;
+    padding: 10px 15px 10px 52.99999px;
+    color: inherit;
+    font-weight: 500;
+    white-space: nowrap;
+}
+a, button, a:focus, a:active, button:focus, button:active, .input-group-text:focus, .input-group-text:active {
+    outline: none !important;
+}
+
+.sidebar-footer {
+    bottom: 0;
+    width: 100%;
+    height: 96px;
+    border-top: 1px solid rgba(77, 82, 89, 0.07);
+    margin-top: 24px;
+    padding-top: 24px;
+    padding-right: 24px;
+    padding-bottom: 24px;
+    padding-left: 24px;
+    font-size: 13px;
+    line-height: 24px;
+}
+
+
+
+.lyear-layout-content {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    padding-top: 68px;
+    padding-left: 240px;
+    -webkit-transition: padding 0.3s;
+    transition: padding 0.3s;
+}
+
+.p-t-15 {
+    padding-top: 15px!important;
+}
